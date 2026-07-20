@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/api/authentication
+docs: https://docs.findable.ai/api/authentication
+summary:
+  types: [apiKey, http, oauth2]
+  api_key_in: [header]
+  api_key_header: x-api-key
+  bearer_token_prefix: ft_
+  oauth2_flows: [authorizationCode]
+  notes: >-
+    The Findable Partner API authenticates with a static organization-scoped API
+    key sent in the x-api-key header. For browser/client-side use, a server
+    exchanges its API key for a short-lived building-owner-scoped session token
+    (Bearer [example key]). The hosted MCP server (mcp.findable.ai) authenticates end
+    users with OAuth 2.1 + PKCE tied to their Findable account.
+schemes:
+  - name: apiKeyAuth
+    type: apiKey
+    in: header
+    parameter_name: x-api-key
+    description: >-
+      Organization-scoped API key required on all Partner API requests. Keys are
+      provisioned by a Findable representative and are prefixed fk_live_
+      (production) or fk_test_ (sandbox). Determines which building owners are
+      accessible. 401 = missing/invalid key; 403 = key lacks access to resource.
+    sources: [https://docs.findable.ai/api/authentication]
+  - name: sessionBearer
+    type: http
+    scheme: bearer
+    bearerFormat: session-token
+    token_prefix: ft_
+    description: >-
+      Short-lived session token for client-side access, minted server-side via
+      POST https://api.findable.ai/v1/building_owners/{OWNER_ID}/sessions (body
+      {"expires_in": <seconds>}). Scoped to a single building owner; default TTL
+      1 hour, maximum 24 hours. Sent as Authorization: Bearer [example key]
+    sources: [https://docs.findable.ai/api/authentication]
+  - name: mcpOAuth
+    type: oauth2
+    flows:
+      - flow: authorizationCode
+        pkce: true
+        description: >-
+          OAuth 2.1 with PKCE used by the hosted Findable MCP server
+          (https://mcp.findable.ai). Access is tied to the individual Findable
+          user account; every tool call is checked against the same permissions
+          as the Findable app.
+    sources: [https://docs.findable.ai/mcp]
