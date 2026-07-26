@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://docs.findable.ai/mcp
+server:
+  name: findable
+  transport: http
+  url: https://mcp.findable.ai
+  dev_url: https://mcp.findable.dev
+  auth:
+    type: oauth2.1
+    pkce: true
+    notes: >-
+      Access is tied to the individual Findable user account; every tool call is
+      checked against the same permissions as the Findable app.
+  install:
+    claude_code: claude mcp add --transport http findable https://mcp.findable.ai
+tools:
+  # Account & navigation
+  - {name: whoami, access: read}
+  - {name: find_resources, access: read}
+  - {name: get_customer, access: read}
+  - {name: get_building, access: read}
+  - {name: get_portfolio, access: read}
+  - {name: get_project, access: read}
+  - {name: get_collection, access: read}
+  # Lists & discovery
+  - {name: list_buildings, access: read}
+  - {name: list_portfolios, access: read}
+  - {name: list_projects, access: read}
+  - {name: list_collections, access: read}
+  - {name: list_users, access: read}
+  - {name: list_integrations, access: read}
+  # Tasks
+  - {name: list_tasks, access: read}
+  - {name: get_task, access: read}
+  # Documents & Q&A
+  - {name: search_documents, access: read}
+  - {name: list_folder_children, access: read}
+  - {name: get_document, access: read}
+  - {name: get_document_metadata, access: read}
+  - {name: ask_findable, access: read}
+  # SharePoint
+  - {name: list_sharepoint_documents, access: read}
+  - {name: get_sharepoint_sync_status, access: read}
+  - {name: list_sharepoint_subscriptions, access: read}
+  # Red Flag (compliance)
+  - {name: get_red_flag, access: read}
+  - {name: list_red_flag_items, access: read}
+  - {name: get_red_flag_item, access: read}
+  - {name: generate_red_flag, access: write}

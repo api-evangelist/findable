@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/api
+authentication:
+  style: api-key + short-lived session bearer
+  api_key_header: x-api-key
+  session_header: "Authorization: Bearer ft_..."
+  ref: authentication/findable-authentication.yml
+streaming:
+  supported: true
+  transport: server-sent-events
+  operations: [POST /api/ask]
+  notes: >-
+    AI Q&A supports streamed responses over SSE (SDK askStream /
+    askAcrossBuildingsStream; React useChat).
+field_naming:
+  convention: camelCase
+  notes: >-
+    Input fields standardised to camelCase as of 2026-05-20 (customer_id ->
+    customerId, customer_name -> customerName).
+pagination:
+  documented: false
+  notes: >-
+    React FindableSearch/useSearch expose paginated results with debouncing, but
+    the Partner API pagination parameters/envelope are not published in the docs.
+idempotency:
+  supported: false
+  notes: No idempotency-key contract is documented by Findable.
+error_envelope:
+  documented_status_codes: [401, 403]
+  ref: errors/findable-problem-types.yml
+versioning:
+  ref: lifecycle/findable-lifecycle.yml
+rate_limits:
+  documented: false

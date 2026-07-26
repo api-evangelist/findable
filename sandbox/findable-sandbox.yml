@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/getting-started
+test_vs_live:
+  mechanism: api-key-prefix
+  live_prefix: fk_live_
+  test_prefix: fk_test_
+  notes: >-
+    Partner API keys are prefixed fk_live_ for production and fk_test_ for the
+    sandbox environment. Keys are provisioned by a Findable representative.
+session_tokens:
+  prefix: ft_
+  mint_endpoint: https://api.findable.ai/v1/building_owners/{OWNER_ID}/sessions
+  default_ttl_seconds: 3600
+  max_ttl_seconds: 86400
+  notes: >-
+    Server-side mints short-lived building-owner-scoped session tokens for
+    client-side use; safe to scope tightly for test integrations.
+environments:
+  - name: mcp-dev
+    url: https://mcp.findable.dev
+    description: Development environment for the hosted MCP server.
+test_values:
+  notes: >-
+    Findable does not publish fixed magic test identifiers (test buildings,
+    documents, or owners); sandbox data is provisioned per organization by a
+    Findable representative. No fabricated test values recorded.

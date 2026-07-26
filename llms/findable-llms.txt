@@ -1,0 +1,33 @@
+# Findable
+
+> Findable is an AI-powered building intelligence platform (findable.ai) that makes construction and property documentation searchable, structured, and audit-ready. It classifies building documents against standards like BS 9991 and NS 3451, detects missing or expiring documents, supports Golden Thread / Building Safety Act compliance, and answers natural-language questions across a building's documentation. It offers a Partner API, a hosted MCP server, and official TypeScript SDK and React libraries.
+
+## APIs
+
+- [Findable Partner API](https://docs.findable.ai): REST API for document search and AI Q&A across building documentation (base URL https://api.findable.ai)
+
+## Docs
+
+- [Developer Documentation](https://docs.findable.ai): Overview, guides, and reference
+- [Getting Started](https://docs.findable.ai/getting-started): API key setup and first calls
+- [API Reference](https://docs.findable.ai/api): Endpoints for ask, search, buildings, documents, building-owners, reports, building-categories
+- [Authentication](https://docs.findable.ai/api/authentication): x-api-key and short-lived Bearer session tokens
+- [MCP Server](https://docs.findable.ai/mcp): Hosted MCP server (mcp.findable.ai), OAuth 2.1 + PKCE, ~28 tools
+- [SDK](https://docs.findable.ai/sdk): @findable-ai/sdk TypeScript client
+- [React](https://docs.findable.ai/react): @findable-ai/react components and hooks
+- [Changelog](https://docs.findable.ai/changelog): Dated, continuously-shipped updates
+
+## Packages
+
+- [@findable-ai/sdk (npm)](https://www.npmjs.com/package/@findable-ai/sdk): Zero-dependency TypeScript client for the Partner API
+- [@findable-ai/react (npm)](https://www.npmjs.com/package/@findable-ai/react): Drop-in React components and headless hooks
+
+## Company
+
+- [Website](https://www.findable.ai)
+- [Blog](https://www.findable.ai/en/blog)
+- [Security & Compliance](https://www.findable.ai/en/security): ISO/IEC 27001:2022, SOC 2 Type I, EU data residency
+- [GitHub](https://github.com/findable-no)
+- [App / Login](https://app.findable.ai)
+- [Terms of Service](https://www.findable.ai/en/terms)
+- [Privacy Policy](https://www.findable.ai/en/privacy)

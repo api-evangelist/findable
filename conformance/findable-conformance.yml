@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.findable.ai/en/security
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Hosted MCP server (mcp.findable.ai) authenticates with OAuth 2.1 + PKCE.
+  - id: api-key
+    conforms: true
+    evidence: Partner API requires an x-api-key header on all requests.
+  - id: sse-streaming
+    conforms: true
+    evidence: POST /api/ask supports Server-Sent Events streaming.
+  - id: mcp
+    conforms: true
+    evidence: Published remote MCP server with ~28 tools over HTTP transport.
+  - id: iso-27001
+    conforms: true
+    evidence: "ISO/IEC 27001:2022 Certified (findable.ai/en/security)."
+  - id: soc2
+    conforms: true
+    evidence: "SOC 2 Type I (findable.ai/en/security)."
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      EU-based data residency and a downloadable Data Processing Agreement
+      published on the security page.
+  - id: rfc9457-problem-details
+    conforms: false
+  - id: fhir-r4
+    conforms: false
+compliance_program:
+  certifications: ["ISO/IEC 27001:2022", "SOC 2 Type I"]
+  data_residency: EU
+  dpa: true
+  page: https://www.findable.ai/en/security

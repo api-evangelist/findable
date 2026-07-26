@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/changelog
+versioning:
+  scheme: continuous
+  current: rolling
+  notes: >-
+    Findable ships continuously with no numbered/semantic API versions; a
+    versioned path segment (v1) appears on the session-token endpoint
+    (/v1/building_owners/{id}/sessions). Changes are announced dated on the
+    changelog.
+  docs: https://docs.findable.ai/changelog
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal deprecation/Sunset-header policy is published. A breaking change
+    (snake_case -> camelCase input fields) was announced dated on the changelog
+    on 2026-05-20.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_notes: >-
+  status.findable.ai does not resolve to a dedicated status page (redirects to
+  the marketing site); no public status page found.

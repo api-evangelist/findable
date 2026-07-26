@@ -1,8 +1,29 @@
 aid: findable
 name: Findable
-description: Findable is a company surfaced as a portfolio company of point-nine and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Findable is an AI-powered building intelligence platform (findable.ai, formerly
+  findable.no) that makes construction and property documentation searchable,
+  structured, and audit-ready. It uses AI to classify building documents against
+  standards such as BS 9991 and NS 3451, detect missing or expiring documents,
+  support Golden Thread / Building Safety Act compliance, and answer natural-language
+  questions across a building's documentation. Findable exposes a Partner API
+  (api.findable.ai) for document search and AI Q&A, a hosted MCP server
+  (mcp.findable.ai) with ~28 tools, and official TypeScript SDK and React component
+  libraries. Used by 150+ property organizations across Norway and the UK.
 url: https://raw.githubusercontent.com/api-evangelist/findable/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.findable.ai/images/logos/findable-logo-dark.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,15 +32,101 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Building Intelligence
+- Property Technology
+- PropTech
+- Facilities Management
+- Building Documentation
+- Compliance
+- Artificial Intelligence
+- Document Search
+- Construction
+apis:
+- name: Findable Partner API
+  description: >-
+    REST API for AI-powered document search and Q&A across building
+    documentation, plus management of buildings, documents, building owners,
+    reports, and building categories. Supports SSE streaming on the Ask endpoint.
+  humanURL: https://docs.findable.ai
+  baseURL: https://api.findable.ai
+  tags:
+  - Building Documentation
+  - Document Search
+  - AI Q&A
+  properties:
+  - type: Documentation
+    url: https://docs.findable.ai
+  - type: APIReference
+    url: https://docs.findable.ai/api
+  - type: GettingStarted
+    url: https://docs.findable.ai/getting-started
+  - type: Authentication
+    url: authentication/findable-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/findable-domain-security.yml
 - type: Website
-  url: https://www.findable.no
+  url: https://www.findable.ai
+- type: DeveloperPortal
+  url: https://docs.findable.ai
+- type: Documentation
+  url: https://docs.findable.ai
+- type: APIReference
+  url: https://docs.findable.ai/api
+- type: GettingStarted
+  url: https://docs.findable.ai/getting-started
+- type: Blog
+  url: https://www.findable.ai/en/blog
+- type: GitHubOrganization
+  url: https://github.com/findable-no
+- type: Login
+  url: https://app.findable.ai
+- type: TermsOfService
+  url: https://www.findable.ai/en/terms
+- type: PrivacyPolicy
+  url: https://www.findable.ai/en/privacy
+- type: Support
+  url: https://www.findable.ai/en/security
+- type: MCPServer
+  url: mcp/findable-mcp.yml
+- type: Authentication
+  url: authentication/findable-authentication.yml
+- type: Packages
+  url: packages/findable-packages.yml
+- type: SDKs
+  url: packages/findable-packages.yml
+- type: Components
+  url: components/findable-components.yml
+- type: Sandbox
+  url: sandbox/findable-sandbox.yml
+- type: Conventions
+  url: conventions/findable-conventions.yml
+- type: ErrorCatalog
+  url: errors/findable-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/findable-lifecycle.yml
+- type: ChangeLog
+  url: changelog/findable-changelog.yml
+- type: Conformance
+  url: conformance/findable-conformance.yml
+- type: Compliance
+  url: https://www.findable.ai/en/security
+- type: TrustCenter
+  url: security/findable-trust-center.yml
+- type: DataModel
+  url: data-model/findable-data-model.yml
+- type: LLMsTxt
+  url: llms/findable-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

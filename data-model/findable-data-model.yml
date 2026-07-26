@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/api
+notes: >-
+  Entities derived from the published Partner API resource surface and MCP tool
+  set (no OpenAPI published; relationships inferred from documented resources and
+  nesting such as sessions under building_owners and documents within buildings).
+entities:
+  - name: building_owner
+    description: Organization/owner tenant; API keys are scoped to accessible building owners.
+    endpoints: [/api/building-owners]
+    mcp: [get_customer, list_users]
+  - name: building
+    description: A building whose documentation is managed and searched.
+    endpoints: [/api/buildings]
+    mcp: [get_building, list_buildings]
+  - name: building_category
+    description: Document categories within a building (e.g. BS 9991 / NS 3451 classification).
+    endpoints: [/api/building-categories]
+  - name: document
+    description: A building document; searchable and Q&A-able.
+    endpoints: [/api/documents]
+    mcp: [get_document, get_document_metadata, search_documents, list_folder_children]
+  - name: report
+    description: Deficiency reports generated over building documentation.
+    endpoints: [/api/reports]
+  - name: portfolio
+    description: A grouping of buildings.
+    mcp: [get_portfolio, list_portfolios]
+  - name: project
+    mcp: [get_project, list_projects]
+  - name: collection
+    mcp: [get_collection, list_collections]
+  - name: task
+    mcp: [list_tasks, get_task]
+  - name: red_flag
+    description: Compliance red-flag tracking over a building/portfolio.
+    mcp: [get_red_flag, list_red_flag_items, get_red_flag_item, generate_red_flag]
+  - name: session
+    description: Short-lived client-side token scoped to a building_owner.
+    endpoints: ["/v1/building_owners/{OWNER_ID}/sessions"]
+relationships:
+  - {from: building, to: building_owner, type: belongs_to, via: building_owner}
+  - {from: building_category, to: building, type: belongs_to, via: building}
+  - {from: document, to: building, type: belongs_to, via: building}
+  - {from: report, to: building, type: belongs_to, via: building}
+  - {from: portfolio, to: building, type: has_many, via: buildings}
+  - {from: session, to: building_owner, type: belongs_to, via: building_owner}
+  - {from: red_flag, to: building, type: belongs_to, via: building}

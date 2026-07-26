@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/react
+loader:
+  registry: npm
+  name: "@findable-ai/react"
+  install: npm install @findable-ai/react
+families:
+  - family: Provider
+    components:
+      - name: FindableProvider
+        kind: context-provider
+        description: >-
+          Context wrapper that initializes the Findable environment (session
+          token + building owner id) for the component tree.
+  - family: Chat
+    components:
+      - name: FindableChat
+        kind: react-component
+        description: Complete AI conversation widget with real-time message streaming.
+      - name: useChat
+        kind: headless-hook
+        description: Manages chat state, streaming, and message lifecycle for custom UIs.
+  - family: Search
+    components:
+      - name: FindableSearch
+        kind: react-component
+        description: Document search interface displaying paginated results.
+      - name: useSearch
+        kind: headless-hook
+        description: Search functionality with built-in debouncing and pagination.

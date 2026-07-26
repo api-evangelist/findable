@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.npmjs.com/package/@findable-ai/sdk
+packages:
+  - language: typescript
+    registry: npm
+    name: "@findable-ai/sdk"
+    version: 0.33.10
+    url: https://www.npmjs.com/package/@findable-ai/sdk
+    install: npm install @findable-ai/sdk
+    repository: https://github.com/findable-no/monorepo-apps
+    description: >-
+      Zero-dependency TypeScript client for the Findable Partner API. Works in
+      Node.js, browsers, and edge runtimes. Methods: listBuildings, getBuilding,
+      search, ask, askStream, askAcrossBuildings, askAcrossBuildingsStream.
+    official: true
+  - language: typescript
+    registry: npm
+    name: "@findable-ai/react"
+    version: 0.33.10
+    url: https://www.npmjs.com/package/@findable-ai/react
+    install: npm install @findable-ai/react
+    repository: https://github.com/findable-no/monorepo-apps
+    description: >-
+      Drop-in React components and headless hooks for building Findable-powered
+      UIs (FindableProvider, FindableChat, FindableSearch, useChat, useSearch).
+      Bundles @findable-ai/sdk as a built-in dependency.
+    official: true

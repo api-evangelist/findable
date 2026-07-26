@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/changelog
+scheme: date-based
+notes: >-
+  Findable ships continuously and does not use numbered/semantic releases; the
+  changelog tracks dated entries across the SDK, React components, Partner API,
+  and MCP server (36 updates in the last 90 days as of capture).
+current_version: rolling
+entries:
+  - date: '2026-07-14'
+    area: MCP Server
+    type: change
+    highlight: >-
+      Document search and folder browsing now return compact result lists
+      without attaching every file.
+  - date: '2026-07-13'
+    area: MCP Server
+    type: change
+    highlight: >-
+      Copilot document links now point to the full original file instead of a
+      page-one thumbnail.
+  - date: '2026-07-12'
+    area: MCP Server
+    type: change
+    highlight: >-
+      Building photo URLs no longer consume model context in results; document
+      search and folder results now include direct downloadUrl values and MCP
+      resource links.
+  - date: '2026-06-30'
+    area: MCP Server
+    type: addition
+    highlight: >-
+      Product Ask UI gained a 'Web access' permission (default on) that lets the
+      chat model search the web.
+  - date: '2026-05-20'
+    area: Partner API
+    type: breaking
+    highlight: >-
+      Input field naming standardised to camelCase: customer_id -> customerId,
+      customer_name -> customerName.
+  - date: '2026-05-19'
+    area: Red Flag Tools
+    type: addition
+    highlight: >-
+      New MCP tools for compliance tracking: get_red_flag, list_red_flag_items,
+      get_red_flag_item, generate_red_flag.

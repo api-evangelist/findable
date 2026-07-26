@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.findable.ai/api/authentication
+format: http-status
+notes: >-
+  Findable does not publish an RFC 9457 problem+json envelope; the documented
+  error surface is HTTP status codes on the Partner API authentication layer.
+problems:
+  - status: 401
+    title: Missing or invalid API key
+    remediation: >-
+      Supply a valid organization-scoped key in the x-api-key header (or a
+      non-expired Bearer session token).
+    source: https://docs.findable.ai/api/authentication
+  - status: 403
+    title: API key lacks access to the requested resource
+    remediation: >-
+      Use a key/session scoped to a building owner that can access the resource;
+      request access from your Findable representative.
+    source: https://docs.findable.ai/api/authentication
